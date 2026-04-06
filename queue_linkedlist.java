@@ -35,12 +35,10 @@ public class queue_linkedlist {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        // Text Area
         textArea = new JTextArea();
         textArea.setEditable(false);
         frame.add(new JScrollPane(textArea), BorderLayout.CENTER);
 
-        // Panel Button
         JPanel panel = new JPanel();
 
         JButton btnAmbil = new JButton("Ambil Antrian");
@@ -53,12 +51,10 @@ public class queue_linkedlist {
 
         frame.add(panel, BorderLayout.SOUTH);
 
-        // Label atas
         labelPanggilan = new JLabel("Belum ada panggilan", JLabel.CENTER);
         labelPanggilan.setFont(new Font("Arial", Font.BOLD, 16));
         frame.add(labelPanggilan, BorderLayout.NORTH);
 
-        // Event Ambil Antrian
         btnAmbil.addActionListener(e -> {
             String nama = JOptionPane.showInputDialog(frame, "Masukkan Nama:");
             if (nama != null && !nama.trim().isEmpty()) {

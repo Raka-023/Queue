@@ -6,13 +6,11 @@ from playsound import playsound
 import os
 
 
-
-
 def speak(text):
-    tts = gTTS(text=text, lang='id')  # bahasa Indonesia
+    tts = gTTS(text=text, lang='id')  
     tts.save("suara.mp3")
     playsound("suara.mp3")
-    os.remove("suara.mp3")  # hapus biar gak numpuk
+    os.remove("suara.mp3") 
 
 class Antrian:
     def __init__(self, nomor, nama):
@@ -31,15 +29,12 @@ class QueueApp:
         self.queue = deque()
         self.nomor_counter = 1
 
-        # Label atas
         self.label = tk.Label(root, text="Belum ada panggilan", font=("Arial", 14))
         self.label.pack(pady=10)
 
-        # Text area
         self.text_area = tk.Text(root, height=10)
         self.text_area.pack(padx=10, pady=10)
 
-        # Frame tombol
         frame = tk.Frame(root)
         frame.pack()
 
@@ -76,10 +71,8 @@ class QueueApp:
         teks = f"Memanggil nomor {a.nomor}, atas nama {a.nama}"
         self.label.config(text=teks)
 
-        # 🔊 Voice
         speak(f"Nomor {a.nomor}, {a.nama}, silahkan menuju loket")
 
-# Run aplikasi
 root = tk.Tk()
 app = QueueApp(root)
 root.mainloop()

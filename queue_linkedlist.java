@@ -68,7 +68,6 @@ public class queue_linkedlist {
             }
         });
 
-        // Event Tampilkan
         btnTampil.addActionListener(e -> {
             textArea.setText("");
             if (queue.isEmpty()) {
@@ -80,7 +79,6 @@ public class queue_linkedlist {
             }
         });
 
-        // Event Panggil
         btnPanggil.addActionListener(e -> {
             if (queue.isEmpty()) {
                 labelPanggilan.setText("Tidak ada antrian");
@@ -91,7 +89,6 @@ public class queue_linkedlist {
             String panggilan = "Memanggil nomor " + a.nomor + ", atas nama " + a.nama;
             labelPanggilan.setText(panggilan);
 
-            // Voice sederhana (pakai beep)
           speak("Nomor " + a.nomor + ", atas nama " + a.nama + ",  please go to counter");
         });
 
